@@ -1,0 +1,439 @@
+/* Style global de la page
+ * 
+ * SOMMAIRE
+ *
+ * 1 - INIT
+ * 2 - RECHERCHE
+ * 3 - HÉBERGEMENTS
+ * 4 - ACTIVITÉS 
+ */
+
+
+
+/* ------------------------
+    1 - INIT
+------------------------ */
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-family: "Raleway";
+   font-size: 1.4rem;
+}
+
+a, a:visited, a:focus {
+   color: inherit;
+}
+
+a:hover {
+   color: #0065FC;
+}
+
+
+/* ------------------------
+    2 - RECHERCHE
+------------------------ */
+
+.recherche__meta__titre {
+   margin-bottom: 10px;
+}
+
+.recherche__champs {
+   display: flex;
+   align-items: center;
+   margin-bottom: 30px;
+}
+
+.recherche__champs__picto {
+   background-color: #F2F2F2;
+   padding: 8px 15px;
+   border: 2px #F2F2F2 solid;
+   border-radius: 10px 0 0 10px;
+   line-height: 0;
+}
+
+.recherche__champs__picto .fas {
+   font-size: 1.6rem;
+}
+
+.recherche__champs__input {
+   font-weight: bold;
+   font-size: 1.2rem;
+   padding: 10px 15px;
+   border: 1px #F2F2F2 solid;
+}
+
+.recherche__champs__bouton {
+   background-color: #0065FC;
+   color: #ffffff;
+   font-size: 1.2rem;
+   padding: 10px 15px;
+   border: 1px #0065FC solid;
+   border-radius: 0 10px 10px 0;
+   transition: background-color .4s, color .4s;
+}
+
+   .recherche__champs__bouton:hover {
+      cursor: pointer;
+      background-color: #F2F2F2;
+      color: #0065FC;
+   }
+
+.recherche__filtres {
+   display: flex;
+   align-items: center;
+   margin-bottom: 30px;
+}
+
+.recherche__filtres__titre {
+   font-weight: bold;
+   padding-right: 30px;
+}
+
+.recherche__filtres__boutons__bouton {
+   position: relative;
+   display: inline-flex;
+   align-items: center;
+   text-decoration: none;
+   padding: 10px 15px;
+   padding-left: calc(40px + 5px); /* calc(width picto + espace voulu) */
+   border: 3px #F2F2F2 solid;
+   border-radius: 50px;
+}
+
+   .recherche__filtres__boutons__bouton:hover {
+      color: inherit;
+   }
+
+   .recherche__filtres__boutons__bouton::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      background-color: #F2F2F2;
+      width: 0%;
+      height: 100%;
+      border: 1px #F2F2F2 solid;
+      border-radius: 50px;
+      z-index: -1;
+      transition: width .4s, border .4s;
+   }
+
+      .recherche__filtres__boutons__bouton:hover::before {
+         width: calc(100% - 10px); /* calc(100% - décalage du ::before left) */
+      }
+
+   .recherche__filtres__boutons__bouton + .recherche__filtres__boutons__bouton {
+      margin-left: 15px;
+   }
+
+.recherche__filtres__boutons__bouton__picto {
+   position: absolute;
+   left: -3px; /* Compense le border de son parent */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #DEEBFF;
+   color: #0065FC;
+   border-radius: 100%;
+   height: 40px;
+   width: 40px;
+}
+
+.recherche__infos {
+    margin-bottom: 30px;
+}
+
+.recherche__infos__picto {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   color: #0065FC;
+   border: 3px #F2F2F2 solid;
+   border-radius: 100%;
+   margin-right: 5px;
+   width: 20px;
+   height: 20px;
+}
+
+
+/* ------------------------
+    3 - HÉBERGEMENTS
+------------------------ */
+
+.hebergements {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.hebergements-fond {
+    background: #F2F2F2;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+
+/* Hébergements Ville */
+.hebergements__ville {
+    width: calc(66.6666% - 75px); /* 75px = .hebergements-fond > padding 30px de chaque côté + 15px d'espace entre les élements */
+}
+
+.hebergements__ville__hebergements {
+    margin-bottom: calc(30px - 21px); /* Voir .card-hebergement--ville > width */
+}
+
+.hebergements__ville__hebergements .row {
+    justify-content: space-between;
+}
+
+.card-hebergement {
+    background-color: #fff;
+    border: 3px #fff solid;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+    .card-hebergement--ville {
+        width: calc(33.3333% - 21px); /* 21px = border 3px (soit 6px) de chaque + 15px d'espace entre les élements */
+        margin-bottom: 21px; /* Lié à la width */
+    }
+
+    .card-hebergement--populaire {
+        display: flex;
+    }
+
+.card-hebergement__lien {
+    text-decoration: none;
+    width: 100%;
+}
+
+    .card-hebergement__lien:hover {
+        color: inherit;
+    }
+
+    .card-hebergement__lien:hover .zoom-in:after {
+        transform: scale(1.2);
+    }   
+
+.card-hebergement__content__image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 10rem;
+    overflow: hidden;
+}
+
+    #auberge-cannebiere {
+        background-image: url("../img/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg");
+    }
+
+    #hotel-port {
+        background-image: url("../img/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg");
+    }
+
+    #hotel-mouettes {
+        background-image: url("../img/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg");
+    }
+
+    #hotel-mer {
+        background-image: url("../img/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg");
+    }
+
+    #auberge-panier {
+        background-image: url("../img/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg");
+    }
+
+    #hotel-amina {
+        background-image: url("../img/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg");
+    }
+    
+
+.card-hebergement__content__image img {
+    width: 100%;
+}
+
+.card-hebergement__content__meta {
+    padding: 5px 10px;
+}
+
+.card-hebergement__content__meta__titre {
+    margin: 0 0 5px;
+}
+
+.card-hebergement__content__meta__description {
+    margin-bottom: 7px;
+}
+
+.card-hebergement__content__meta__description__prix {
+    font-weight: bold;
+}
+
+.card-hebergement__content__meta__note .fa-star {
+    color: #0065FC;
+}
+
+    .card-hebergement__content__meta__note .fa-star--vide {
+        color: #dadada;
+    }
+
+.hebergements__ville__lien {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .hebergements__ville__lien:hover {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+
+/* Hébergements Populaires */
+.hebergements__populaires {
+    width: calc(33.3333% - 75px); /* 75px = .hebergements-fond > padding 30px de chaque côté + 15px d'espace entre les élements */
+}
+
+.hebergements__populaires__titre {
+   display: flex;
+   justify-content: space-between;
+}
+
+.card-hebergement--populaire .card-hebergement__content {
+    display: flex;
+}
+
+    .card-hebergement--populaire + .card-hebergement--populaire {
+        margin-top: 30px;
+    }
+
+.card-hebergement--populaire .card-hebergement__content__image {
+    width: 33.333%;
+}
+
+    #hotel-soleil-matin {
+        background-image: url("../img/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg");
+    }
+
+    #coeur-eau-chambres-hotes {
+        background-image: url("../img/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg");
+    }
+
+    #hotel-bleu-blanc {
+        background-image: url("../img/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg");
+    }
+
+.card-hebergement--populaire .card-hebergement__content__meta {
+    position: relative;
+    padding: 10px;
+    flex: 1;
+}
+
+.card-hebergement--populaire .card-hebergement__content__meta__note {
+    position: absolute;
+    bottom: 10px;
+}
+
+
+
+/* ------------------------
+    4 - ACTIVITÉS
+------------------------ */
+.activites {
+    margin-bottom: 50px;
+}
+
+.activites__activites .column {
+    height: 500px;
+}
+
+.card-activite {
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px #dadada;
+    width: calc(25% - 30px); /* calc(4 colonnes - margin-left) */
+    overflow: hidden;
+}
+
+    .card-activite + .card-activite {
+        margin-left: 30px;
+    }
+
+    /* Grandes cartes*/
+    .card-activite:nth-child(3n+1) {
+        height: 100%;
+    }
+
+    /* Cartes 2 et 6 */
+    .card-activite:nth-child(4n+2) {
+        flex-grow: 3;
+    }
+
+    /* Cartes 3 et 5 */
+    .card-activite:nth-child(2n+3) {
+        flex-grow: 2;
+    }
+
+    /* Cartes 2 et 5 */
+    .card-activite:nth-child(3n+2) {
+        margin-bottom: 30px;
+    }
+
+.card-activite__lien {
+    text-decoration: none;
+}
+
+    .card-activite__lien:hover {
+        color: inherit;
+    }
+
+    .card-activite__lien:hover .zoom-in:after {
+        transform: scale(1.2);
+    } 
+
+.card-activite__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-activite__content__image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+    #vieux-port {
+        background-image: url("../img/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg");
+    }
+
+    #fort-pomegues {
+        background-image: url("../img/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg");
+    }
+
+    #iles-friout {
+        background-image: url("../img/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg");
+    }
+
+    #parc-calanques {
+        background-image: url("../img/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg");
+    }
+
+    #notre-dame-garde {
+        background-image: url("../img/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg");
+    }
+
+    #parc-longchamp {
+        background-image: url("../img/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg");
+    }
+    
+
+.card-activite__content__meta {
+    padding: 10px 15px;
+}
+
+.card-activite__content__meta__titre {
+    margin: 0;
+}
+   

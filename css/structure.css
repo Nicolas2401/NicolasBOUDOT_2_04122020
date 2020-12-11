@@ -1,0 +1,126 @@
+/* Découpage de la structure en Header, Nav, Footer, etc
+ * 
+ * SOMMAIRE
+ *
+ * 1 - HEADER 
+ * 2 - FOOTER
+ *
+ */
+
+
+/* ------------------------
+    1 - HEADER
+------------------------ */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__navigation__liste {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.header__navigation__liste__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 30px;
+    list-style: none;
+}
+
+.header__navigation__liste__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: #0065FC;
+    height: 3px;
+    width: 0%;
+}
+
+    /* Onglet actif */
+    .header__navigation__liste__item.active {
+        position: relative;
+    }
+
+        /* Barre bleu au dessus de l'onglet actif */
+        .header__navigation__liste__item.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            background-color: #0065FC;
+            height: 3px;
+            width: 100%;
+        }
+
+    .header__navigation__liste__item.active .header__navigation__liste__item__lien { 
+        color: #0065FC;
+    }
+
+.header__navigation__liste__item__lien {
+    color: #000;
+    text-decoration: none;
+    transition: color .4s;
+}
+
+    .header__navigation__liste__item__lien:hover {
+        color: #0065FC;
+    }
+
+/* S'inscrire */
+.header__navigation__liste__item:last-child {
+    padding-right: 0;
+}
+
+.header__navigation__liste__item:last-child .header__navigation__liste__item__lien {
+    color: #0065FC;
+    font-weight: bold;
+}
+
+
+
+/* ------------------------
+    2 - FOOTER
+------------------------ */
+.footer {
+    background-color: #F2F2F2;
+}
+
+.footer__sections {
+    display: flex;
+    padding: 30px 0 50px;
+}
+
+.footer__sections__section {
+    width: 33.3333%;
+}
+
+.footer__sections__section__liste {
+    padding: 0;
+    margin: 0;
+}
+
+.footer__sections__section__liste__item {
+    list-style: none;
+}
+
+    .footer__sections__section__liste__item + .footer__sections__section__liste__item {
+        margin-top: 10px;
+    }
+
+.footer__sections__section__liste__item__lien {
+    text-decoration: none;
+}
+
+    .footer__sections__section__liste__item__lien:hover {
+        color: inherit;
+        text-decoration: underline;
+    }

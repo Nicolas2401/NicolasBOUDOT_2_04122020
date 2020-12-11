@@ -1,0 +1,119 @@
+/* Création de classes utilitaires réutilisables
+ *
+ * SOMMAIRE
+ *
+ * 1 - COLORS
+ * 2 - TITRES
+ * 3 - EFFETS
+ * 4 - GRILLE
+ *
+ */
+
+
+/* 1 - COLOR */
+
+/* Rappel des couleurs de la charte */
+/*
+    Blanc :
+        color: #ffffff;
+    Noir :
+        color: #000000;
+    Bleu : 
+        color: #0065FC;
+    Bleu clair :
+        color: #DEEBFF;
+    Gris :
+        color: #F2F2F2;
+*/
+
+
+
+/* 2 - TITRE */
+h1, .like-h1 {
+    font-size: 3rem;
+}
+
+h2, .like-h2 {
+    font-size: 2.4rem;
+    margin: 0 0 15px;
+}
+
+h3, .like-h3 {
+    font-size: 2rem;
+}
+
+h4, .like-h4 {
+    font-size: 1.8rem;
+}
+
+h5, .like-h5 {
+    font-size: 1.6rem;
+}
+
+h6, .like-h6 {
+    font-size: 1.4rem;
+}
+
+p {
+    font-size: 1.4rem;
+    margin: 0 0 15px;
+}
+
+
+/* 3 - EFFETS */
+.zoom-in::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    background-size: cover;
+    transform-origin: center;
+    transition: transform .4s ease-in-out;
+}
+
+.zoom-in:hover::after {
+    transform: scale(1.2);
+}
+
+
+/* 4 - GRILLE */
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 720px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            max-width: 960px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1140px;
+        }
+    }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
