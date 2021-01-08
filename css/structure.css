@@ -17,6 +17,25 @@
     justify-content: space-between;
 }
 
+    @media (max-width: 575px) {
+        .header {
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+    }
+
+@media (max-width: 575px) {
+    .header__logo {
+        width: 50%;
+    }
+
+    .header__navigation {
+        display: flex;
+        justify-content: flex-end;
+        width: 50%;
+    }
+}
+
 .header__navigation__liste {
     display: flex;
     align-items: center;
@@ -31,17 +50,6 @@
     height: 100%;
     padding: 0 30px;
     list-style: none;
-}
-
-.header__navigation__liste__item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    background-color: #0065FC;
-    height: 3px;
-    width: 0%;
 }
 
     /* Onglet actif */
@@ -75,12 +83,38 @@
         color: #0065FC;
     }
 
+
+.header__navigation--responsive {
+    width: 100%;
+}
+
+.header__navigation--responsive .header__navigation__liste__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 7px 0;
+    width: 50%;
+}
+
+    .header__navigation--responsive .header__navigation__liste__item::before {
+        content: "";
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        height: 3px;
+        width: 100%;
+    }
+
+        .header__navigation--responsive .header__navigation__liste__item.inactive::before {
+            background-color: #F2F2F2;
+        }
+
 /* S'inscrire */
 .header__navigation__liste__item:last-child {
     padding-right: 0;
 }
 
-.header__navigation__liste__item:last-child .header__navigation__liste__item__lien {
+.header__navigation .header__navigation__liste__item:last-child .header__navigation__liste__item__lien {
     color: #0065FC;
     font-weight: bold;
 }
@@ -99,8 +133,28 @@
     padding: 30px 0 50px;
 }
 
+    @media (max-width: 575px) {
+        .footer__sections {
+            flex-direction: column;
+        }
+    }
+
 .footer__sections__section {
     width: 33.3333%;
+}
+
+    @media (max-width: 575px) {
+        .footer__sections__section {
+            width: 100%;
+        }
+
+        .footer__sections__section + .footer__sections__section {
+            margin-top: 30px;
+        }
+    }
+
+.footer__sections__section__titre {
+    margin-bottom: 1.5rem;
 }
 
 .footer__sections__section__liste {

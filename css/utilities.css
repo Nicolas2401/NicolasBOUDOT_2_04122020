@@ -4,8 +4,9 @@
  *
  * 1 - COLORS
  * 2 - TITRES
- * 3 - EFFETS
- * 4 - GRILLE
+ * 3 - DISPLAY
+ * 4 - EFFETS
+ * 5 - GRILLE
  *
  */
 
@@ -31,27 +32,38 @@
 /* 2 - TITRE */
 h1, .like-h1 {
     font-size: 3rem;
+    margin: 0 0 0.5rem;
 }
 
 h2, .like-h2 {
     font-size: 2.4rem;
-    margin: 0 0 15px;
+    margin: 0 0 0.5rem;
 }
+
+    @media (max-width: 575px) {
+        h2, .like-h2 {
+            font-size: 2rem;
+        }
+    }
 
 h3, .like-h3 {
     font-size: 2rem;
+    margin: 0 0 0.5rem;
 }
 
 h4, .like-h4 {
     font-size: 1.8rem;
+    margin: 0 0 0.5rem;
 }
 
 h5, .like-h5 {
     font-size: 1.6rem;
+    margin: 0 0 0.5rem;
 }
 
 h6, .like-h6 {
     font-size: 1.4rem;
+    margin: 0 0 0.5rem;
 }
 
 p {
@@ -60,7 +72,41 @@ p {
 }
 
 
-/* 3 - EFFETS */
+/* 3 - DISPLAY */
+.d-none {
+    display: none !important;
+}
+
+    @media (max-width: 575px) {
+        .d-xs-none {
+            display: none !important;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .d-sm-none {
+            display: none !important;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .d-md-none {
+            display: none !important;
+        }
+    }
+    @media (min-width: 992px) {
+        .d-lg-none {
+            display: none !important;
+        }
+    }
+    @media (min-width: 1200px) {
+        .d-xl-none {
+            display: none !important;
+        }
+    }
+
+
+/* 4 - EFFETS */
 .zoom-in::after {
     content: "";
     position: absolute;
@@ -79,7 +125,7 @@ p {
 }
 
 
-/* 4 - GRILLE */
+/* 5 - GRILLE */
 
 .container {
     width: 100%;
@@ -88,6 +134,16 @@ p {
     margin-right: auto;
     margin-left: auto;
 }
+
+    @media (max-width: 575px) {
+        .container {
+            max-width: 540px;
+        }
+
+        .container-xs-full {
+            padding: 0;
+        }
+    }
 
     @media (min-width: 768px) {
         .container {

@@ -21,28 +21,38 @@
     <header class="header container">
         <div class="header__logo">
             <h1>
-                <a href="/">
-                    <img src="img/logo/Reservia.svg" alt="Logo Reservia">
+                <a href="">
+                    <img src="img/logo/Reservia.svg" alt="Reservia - Site de planification de vacances ">
                 </a>
             </h1>
         </div>
         <nav class="header__navigation">
             <ul class="header__navigation__liste">
-                <li class="header__navigation__liste__item active">
-                    <a href="" class="header__navigation__liste__item__lien">Hébergements</a>
+                <li class="header__navigation__liste__item active d-xs-none">
+                    <a href="#recherche" class="header__navigation__liste__item__lien">Hébergements</a>
                 </li>
-                <li class="header__navigation__liste__item">
-                    <a href="" class="header__navigation__liste__item__lien">Activités</a>
+                <li class="header__navigation__liste__item d-xs-none">
+                    <a href="#activites" class="header__navigation__liste__item__lien">Activités</a>
                 </li>
                 <li class="header__navigation__liste__item">
                     <a href="" class="header__navigation__liste__item__lien">S'inscrire</a>
                 </li>
             </ul>
         </nav>
+        <nav class="header__navigation--responsive d-sm-none">
+            <ul class="header__navigation__liste">
+                <li class="header__navigation__liste__item active">
+                    <a href="#recherche" class="header__navigation__liste__item__lien">Hébergements</a>
+                </li>
+                <li class="header__navigation__liste__item inactive">
+                    <a href="#activites" class="header__navigation__liste__item__lien">Activités</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section class="recherche container">
+        <section id="recherche" class="recherche container">
             <div class="recherche__meta">
                 <h2 class="recherche__meta__titre">Trouvez votre hébergement pour des vacances de rêve</h2>
                 <p class="recherche__meta__texte">En plein centre ville ou en pleine nature</p>
@@ -52,7 +62,10 @@
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <input type="text" class="recherche__champs__input">
-                <input type="submit" value="Rechercher" class="recherche__champs__bouton">
+                <button type="submit" class="recherche__champs__bouton">
+                    <span class="d-xs-none">Rechercher</span>
+                    <span class="d-sm-none"><i class="fas fa-search"></i></span>
+                </button>
             </div>
             <div class="recherche__filtres">
                 <span class="recherche__filtres__titre">Filtres</span>
@@ -91,10 +104,9 @@
             </p>
         </section>
 
-        <section class="hebergements container">
+        <section id="hebergements" class="hebergements container container-xs-full">
             <div class="hebergements__ville hebergements-fond">
                 <h2 class="hebergements__ville__titre">Hébergements à Marseille</h2>
-
                 <div class="hebergements__ville__hebergements">
                     <div class="row">
                         <div class="card-hebergement card-hebergement--ville">
@@ -220,7 +232,6 @@
                         </div>
                     </div>
                 </div>
-
                 <a href="" class="hebergements__ville__lien">Afficher plus</a>
             </div>
 
@@ -299,7 +310,7 @@
             </div>
         </section>
 
-        <section class="activites container">
+        <section id="activites" class="activites container">
             <h2 class="activites__titre">Activités à Marseille</h2>
             <div class="activites__activites">
                 <div class="column">
@@ -335,7 +346,8 @@
                             </div>
                         </a>
                     </div>
-
+                </div>
+                <div class="column">
                     <div class="card-activite">
                         <a href="" class="card-activite__lien">
                             <div class="card-activite__content">
@@ -393,7 +405,7 @@
                 </div>
 
                 <div class="footer__sections__section">
-                    <h3 class="footer__sections__section__titre like-h4">Nos hébergemenst</h3>
+                    <h3 class="footer__sections__section__titre like-h4">Nos hébergements</h3>
                     <ul class="footer__sections__section__liste">
                         <li class="footer__sections__section__liste__item">
                             <a href="" class="footer__sections__section__liste__item__lien">Charte qualité</a>

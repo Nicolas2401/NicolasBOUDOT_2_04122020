@@ -65,6 +65,12 @@ a:hover {
    border: 1px #F2F2F2 solid;
 }
 
+    @media (max-width: 575px) {
+        .recherche__champs__input {
+            width: 100%;
+        }  
+    }
+
 .recherche__champs__bouton {
    background-color: #0065FC;
    color: #ffffff;
@@ -81,16 +87,44 @@ a:hover {
       color: #0065FC;
    }
 
+   @media (max-width: 575px) {
+       .recherche__champs__bouton {
+           border-radius: 10px;
+           margin-left: -15px;
+       }
+   }
+
 .recherche__filtres {
-   display: flex;
-   align-items: center;
-   margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
 }
+
+    @media (max-width: 767px) {
+        .recherche__filtres {
+            margin-bottom: 15px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .recherche__filtres {
+           flex-direction: row;
+           align-items: center;
+        }
+    }
 
 .recherche__filtres__titre {
    font-weight: bold;
-   padding-right: 30px;
+   margin-bottom: 15px;
 }
+
+    @media (min-width: 992px) {
+        .recherche__filtres__titre {
+            margin-bottom: 0;
+            margin-right: 30px;
+        }
+    }
 
 .recherche__filtres__boutons__bouton {
    position: relative;
@@ -127,6 +161,24 @@ a:hover {
    .recherche__filtres__boutons__bouton + .recherche__filtres__boutons__bouton {
       margin-left: 15px;
    }
+
+   @media (max-width: 575px) {
+        .recherche__filtres__boutons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .recherche__filtres__boutons__bouton {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .recherche__filtres__boutons__bouton + .recherche__filtres__boutons__bouton {
+            margin-left: 0;
+        }
+    }
 
 .recherche__filtres__boutons__bouton__picto {
    position: absolute;
@@ -168,16 +220,45 @@ a:hover {
     margin-bottom: 50px;
 }
 
+    @media (max-width: 991px) {
+        .hebergements {
+            flex-direction: column-reverse;
+            margin-bottom: 0;
+        }
+    }
+
+
 .hebergements-fond {
     background: #F2F2F2;
     border-radius: 15px;
     padding: 30px;
 }
 
+    @media (max-width: 767px) {
+        .hebergements-fond {
+            border-radius: 0;
+            padding: 30px 15px;
+        }
+    }
+
 
 /* Hébergements Ville */
 .hebergements__ville {
-    width: calc(66.6666% - 75px); /* 75px = .hebergements-fond > padding 30px de chaque côté + 15px d'espace entre les élements */
+    width: calc(66.6666% - 15px); /* 15px d'espace entre les élements = 30px au total */
+}
+
+    @media (max-width: 991px) {
+        .hebergements__ville {
+            width: 100%;
+        }
+
+        .hebergements__ville.hebergements-fond {
+            background-color: inherit;
+        }
+    }
+
+.hebergements__ville__titre {
+    margin-bottom: 1.5rem;
 }
 
 .hebergements__ville__hebergements {
@@ -188,10 +269,17 @@ a:hover {
     justify-content: space-between;
 }
 
+    @media (max-width: 575px) {
+        .hebergements__ville__hebergements .row {
+            flex-direction: column;
+        }
+    }
+
 .card-hebergement {
     background-color: #fff;
     border: 3px #fff solid;
     border-radius: 15px;
+    box-shadow: 0px 0px 15px #dadada;
     overflow: hidden;
 }
 
@@ -199,6 +287,13 @@ a:hover {
         width: calc(33.3333% - 21px); /* 21px = border 3px (soit 6px) de chaque + 15px d'espace entre les élements */
         margin-bottom: 21px; /* Lié à la width */
     }
+
+        @media (max-width: 575px) {
+            .card-hebergement--ville {
+                width: 100%;
+                margin-bottom: 15px;
+            } 
+        }
 
     .card-hebergement--populaire {
         display: flex;
@@ -291,12 +386,19 @@ a:hover {
 
 /* Hébergements Populaires */
 .hebergements__populaires {
-    width: calc(33.3333% - 75px); /* 75px = .hebergements-fond > padding 30px de chaque côté + 15px d'espace entre les élements */
+    width: calc(33.3333% - 15px); /* 15px d'espace entre les élements = 30px au total */
 }
+
+    @media (max-width: 991px) {
+        .hebergements__populaires {
+            width: 100%;
+        }
+    }
 
 .hebergements__populaires__titre {
    display: flex;
    justify-content: space-between;
+   margin-bottom: 1.5rem;
 }
 
 .card-hebergement--populaire .card-hebergement__content {
@@ -306,6 +408,12 @@ a:hover {
     .card-hebergement--populaire + .card-hebergement--populaire {
         margin-top: 30px;
     }
+
+        @media (max-width: 575px) {
+            .card-hebergement--populaire + .card-hebergement--populaire {
+                margin-top: 15px;
+            }
+        }
 
 .card-hebergement--populaire .card-hebergement__content__image {
     width: 33.333%;
@@ -343,40 +451,119 @@ a:hover {
     margin-bottom: 50px;
 }
 
+    @media (max-width: 575px) {
+        .activites {
+            margin-bottom: 30px;
+        }
+    }
+
+.activites__titre {
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .activites__activites {
+        display: flex;
+    }
+}
+
+
 .activites__activites .column {
     height: 500px;
 }
+
+    @media (max-width: 575px) {
+        .activites__activites .column {
+            flex-direction: row;
+            height: auto;
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+
+
+        .activites__activites .column:nth-child(even) .card-activite:first-child {
+            order: 1;
+        }
+
+        .activites__activites .column:nth-child(even) .card-activite + .card-activite {
+            margin-left: 0;
+            margin-right: 30px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .activites__activites .column {
+            height: 350px;
+            width: calc(50% - 15px);
+        }
+    
+        .activites__activites .column + .column {
+            margin-left: 30px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .activites__activites .column {
+            height: 500px;
+        }
+    }
 
 .card-activite {
     border-radius: 15px;
     box-shadow: 0px 0px 15px #dadada;
     width: calc(25% - 30px); /* calc(4 colonnes - margin-left) */
+    width: calc(50% - 15px); /* calc(2 colonnes * 2 - margin-left) */
     overflow: hidden;
 }
+
+    @media (max-width: 575px) {
+        .card-activite {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .card-activite {
+            margin-bottom: 30px;
+        }
+    }
 
     .card-activite + .card-activite {
         margin-left: 30px;
     }
 
-    /* Grandes cartes*/
-    .card-activite:nth-child(3n+1) {
+    .card-activite:first-child {
         height: 100%;
     }
 
-    /* Cartes 2 et 6 */
-    .card-activite:nth-child(4n+2) {
+    .card-activite:nth-child(2) {
         flex-grow: 3;
     }
 
-    /* Cartes 3 et 5 */
-    .card-activite:nth-child(2n+3) {
+        .activites__activites .column + .column .card-activite:nth-child(2) {
+            flex-grow: 2;
+        }
+
+    .card-activite:nth-child(3) {
         flex-grow: 2;
     }
 
-    /* Cartes 2 et 5 */
-    .card-activite:nth-child(3n+2) {
-        margin-bottom: 30px;
-    }
+        .activites__activites .column + .column .card-activite:nth-child(3) {
+            flex-grow: 3;
+        }
+
+        @media (max-width: 575px) {
+            .card-activite + .card-activite {
+                margin-top: 15px;
+                margin-left: 0;
+            }
+
+            /* Cartes 2 et 5 */
+            .card-activite:nth-child(3n+2) {
+                margin-bottom: 0;
+            }
+        }
 
 .card-activite__lien {
     text-decoration: none;
@@ -403,6 +590,12 @@ a:hover {
     height: 100%;
     overflow: hidden;
 }
+
+    @media (max-width: 575px) {
+        .card-activite__content__image {
+            height: 10rem;
+        }
+    }
 
     #vieux-port {
         background-image: url("../img/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg");
