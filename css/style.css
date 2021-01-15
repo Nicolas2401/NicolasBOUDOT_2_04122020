@@ -41,8 +41,12 @@ a:hover {
 }
 
 .recherche__champs {
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
-   align-items: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
    margin-bottom: 30px;
 }
 
@@ -78,6 +82,8 @@ a:hover {
    padding: 10px 15px;
    border: 1px #0065FC solid;
    border-radius: 0 10px 10px 0;
+   -webkit-transition: background-color .4s, color .4s;
+   -o-transition: background-color .4s, color .4s;
    transition: background-color .4s, color .4s;
 }
 
@@ -95,9 +101,16 @@ a:hover {
    }
 
 .recherche__filtres {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     margin-bottom: 30px;
 }
 
@@ -109,8 +122,13 @@ a:hover {
 
     @media (min-width: 992px) {
         .recherche__filtres {
-           flex-direction: row;
-           align-items: center;
+           -webkit-box-orient: horizontal;
+           -webkit-box-direction: normal;
+               -ms-flex-direction: row;
+                   flex-direction: row;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
         }
     }
 
@@ -128,8 +146,12 @@ a:hover {
 
 .recherche__filtres__boutons__bouton {
    position: relative;
+   display: -webkit-inline-box;
+   display: -ms-inline-flexbox;
    display: inline-flex;
-   align-items: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
    text-decoration: none;
    padding: 10px 15px;
    padding-left: calc(40px + 5px); /* calc(width picto + espace voulu) */
@@ -151,6 +173,8 @@ a:hover {
       border: 1px #F2F2F2 solid;
       border-radius: 50px;
       z-index: -1;
+      -webkit-transition: width .4s, border .4s;
+      -o-transition: width .4s, border .4s;
       transition: width .4s, border .4s;
    }
 
@@ -164,8 +188,11 @@ a:hover {
 
    @media (max-width: 575px) {
         .recherche__filtres__boutons {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
         }
     }
 
@@ -183,9 +210,15 @@ a:hover {
 .recherche__filtres__boutons__bouton__picto {
    position: absolute;
    left: -3px; /* Compense le border de son parent */
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
-   align-items: center;
-   justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
    background-color: #DEEBFF;
    color: #0065FC;
    border-radius: 100%;
@@ -198,9 +231,15 @@ a:hover {
 }
 
 .recherche__infos__picto {
+   display: -webkit-inline-box;
+   display: -ms-inline-flexbox;
    display: inline-flex;
-   justify-content: center;
-   align-items: center;
+   -webkit-box-pack: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
    color: #0065FC;
    border: 3px #F2F2F2 solid;
    border-radius: 100%;
@@ -215,14 +254,21 @@ a:hover {
 ------------------------ */
 
 .hebergements {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-bottom: 50px;
 }
 
     @media (max-width: 991px) {
         .hebergements {
-            flex-direction: column-reverse;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: reverse;
+                -ms-flex-direction: column-reverse;
+                    flex-direction: column-reverse;
             margin-bottom: 0;
         }
     }
@@ -266,12 +312,17 @@ a:hover {
 }
 
 .hebergements__ville__hebergements .row {
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
     @media (max-width: 575px) {
         .hebergements__ville__hebergements .row {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
         }
     }
 
@@ -279,7 +330,8 @@ a:hover {
     background-color: #fff;
     border: 3px #fff solid;
     border-radius: 15px;
-    box-shadow: 0px 0px 15px #dadada;
+    -webkit-box-shadow: 0px 0px 15px #dadada;
+            box-shadow: 0px 0px 15px #dadada;
     overflow: hidden;
 }
 
@@ -296,6 +348,8 @@ a:hover {
         }
 
     .card-hebergement--populaire {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
@@ -309,7 +363,9 @@ a:hover {
     }
 
     .card-hebergement__lien:hover .zoom-in:after {
-        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2);
     }   
 
 .card-hebergement__content__image {
@@ -396,12 +452,18 @@ a:hover {
     }
 
 .hebergements__populaires__titre {
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
-   justify-content: space-between;
+   -webkit-box-pack: justify;
+       -ms-flex-pack: justify;
+           justify-content: space-between;
    margin-bottom: 1.5rem;
 }
 
 .card-hebergement--populaire .card-hebergement__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -434,7 +496,9 @@ a:hover {
 .card-hebergement--populaire .card-hebergement__content__meta {
     position: relative;
     padding: 10px;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .card-hebergement--populaire .card-hebergement__content__meta__note {
@@ -463,6 +527,8 @@ a:hover {
 
 @media (min-width: 768px) {
     .activites__activites {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 }
@@ -474,7 +540,10 @@ a:hover {
 
     @media (max-width: 575px) {
         .activites__activites .column {
-            flex-direction: row;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
             height: auto;
         }
     }
@@ -483,7 +552,9 @@ a:hover {
 
 
         .activites__activites .column:nth-child(even) .card-activite:first-child {
-            order: 1;
+            -webkit-box-ordinal-group: 2;
+                -ms-flex-order: 1;
+                    order: 1;
         }
 
         .activites__activites .column:nth-child(even) .card-activite + .card-activite {
@@ -511,7 +582,8 @@ a:hover {
 
 .card-activite {
     border-radius: 15px;
-    box-shadow: 0px 0px 15px #dadada;
+    -webkit-box-shadow: 0px 0px 15px #dadada;
+            box-shadow: 0px 0px 15px #dadada;
     width: calc(25% - 30px); /* calc(4 colonnes - margin-left) */
     width: calc(50% - 15px); /* calc(2 colonnes * 2 - margin-left) */
     overflow: hidden;
@@ -538,19 +610,27 @@ a:hover {
     }
 
     .card-activite:nth-child(2) {
-        flex-grow: 3;
+        -webkit-box-flex: 3;
+            -ms-flex-positive: 3;
+                flex-grow: 3;
     }
 
         .activites__activites .column + .column .card-activite:nth-child(2) {
-            flex-grow: 2;
+            -webkit-box-flex: 2;
+                -ms-flex-positive: 2;
+                    flex-grow: 2;
         }
 
     .card-activite:nth-child(3) {
-        flex-grow: 2;
+        -webkit-box-flex: 2;
+            -ms-flex-positive: 2;
+                flex-grow: 2;
     }
 
         .activites__activites .column + .column .card-activite:nth-child(3) {
-            flex-grow: 3;
+            -webkit-box-flex: 3;
+                -ms-flex-positive: 3;
+                    flex-grow: 3;
         }
 
         @media (max-width: 575px) {
@@ -574,12 +654,19 @@ a:hover {
     }
 
     .card-activite__lien:hover .zoom-in:after {
-        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2);
     } 
 
 .card-activite__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
 }
 

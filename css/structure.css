@@ -13,13 +13,18 @@
 ------------------------ */
 
 .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
     @media (max-width: 575px) {
         .header {
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             margin-bottom: 30px;
         }
     }
@@ -30,23 +35,35 @@
     }
 
     .header__navigation {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
         width: 50%;
     }
 }
 
 .header__navigation__liste {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
 .header__navigation__liste__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
     padding: 0 30px;
     list-style: none;
@@ -76,6 +93,8 @@
 .header__navigation__liste__item__lien {
     color: #000;
     text-decoration: none;
+    -webkit-transition: color .4s;
+    -o-transition: color .4s;
     transition: color .4s;
 }
 
@@ -90,8 +109,12 @@
 
 .header__navigation--responsive .header__navigation__liste__item {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 7px 0;
     width: 50%;
 }
@@ -129,13 +152,18 @@
 }
 
 .footer__sections {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 30px 0 50px;
 }
 
     @media (max-width: 575px) {
         .footer__sections {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
         }
     }
 
